@@ -1,0 +1,33 @@
+<div class="content d-flex justify-content-center align-items-center mt-5">
+<!-- Password recovery form -->
+  <div class="card mb-0", style="width: 400px;">
+    <div class="card-body">
+      <div class="text-center mb-3">
+        <div class="d-inline-flex bg-primary bg-opacity-10 text-primary lh-1 rounded-pill p-3 mb-3 mt-1">
+          <i class="ph-arrows-counter-clockwise ph-2x"></i>
+        </div>
+        <h5 class="mb-0">Password recovery</h5>
+        <span class="d-block text-muted">We'll send you instructions in email</span>
+      </div>
+     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= render "users/shared/error_messages", resource: resource %>
+
+    <div class="field mb-3">
+      <%= f.label :email, class:"form-label" %><br />
+      <div class="form-control-feedback form-control-feedback-start">
+        <%= f.email_field :email, class:"form-control", autofocus: true, autocomplete: "email" %>
+         <div class="form-control-feedback-icon">
+          <i class="ph-at text-muted"></i>
+         </div>
+     </div>
+    </div>
+
+    <div class="actions w-100">
+      <%= f.submit "Reset Password", class:"btn btn-primary w-100" %>
+    </div>
+   <% end %>
+
+   </div>
+  </div>
+  <!-- /password recovery form -->
+</div>

@@ -1,0 +1,14 @@
+<%= form_with model: @role, local: true do |form| %>
+
+<div>
+<%= form.label :role_name, class:"me-4" %>
+<%= form.text_field :role_name, required: true, class:"mb-2" %>
+<% @role.errors.full_messages_for(:role_name).each do |message| %>
+      <div><%= message %></div>
+<% end %>
+</div>
+
+<div>
+  <%= form.submit"Create Role", class:"btn btn-primary mt-2 mb-2" %>
+</div>
+<% end %>

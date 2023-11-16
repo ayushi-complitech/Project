@@ -1,0 +1,36 @@
+<style>
+ .card{
+     width: 400px;
+ }
+</style>
+<div class="content d-flex justify-content-center align-items-center">
+<div class="card">
+ <div class=card-body>
+  <div class="text-center mb-3">
+  <div class="d-inline-flex align-items-center justify-content-center mb-4 mt-2">
+      <%= image_tag('logo_icon.svg', class:"h-48px") %>             
+  </div>
+  <h5 class="mb-0">Login to your account</h5>
+  <span class="d-block text-muted">Enter your credentials below</span>
+</div>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field mb-3">
+    <%= f.label :email, class:"form-label" %><br />
+    <%= f.email_field :email, autofocus: true, class:"form-control", autocomplete: "email" %>
+  </div>
+
+  <div class="field mb-3">
+    <%= f.label :password, class:"form-label" %><br />
+    <%= f.password_field :password, class:"form-control", autocomplete: "current-password" %>
+  </div>
+
+  <div class="actions mb-3">
+    <%= f.submit "Log in", class:"btn btn-primary w-100" %>
+  </div>
+<% end %>
+
+<%= render "users/shared/links" %>
+</div>
+</div>
+</div>

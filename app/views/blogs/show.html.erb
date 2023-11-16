@@ -1,0 +1,10 @@
+<body>
+<strong class="fs-5">Blog name:</strong>
+<%= @blog.blog_name %></br>
+
+<strong class="fs-5">Description:</strong>
+<%= @blog.description %></br>
+
+<%= link_to 'Edit', edit_blog_path(@blog), class:"btn btn-warning" %>
+<%= link_to 'Back', blogs_path, class:"btn btn-success ms-4" %>
+</body>
