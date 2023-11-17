@@ -8,7 +8,14 @@ class BlogsController < ApplicationController
   end
  
   def show
-    @blog = Blog.find(params[:id])
+      @blog = Blog.find(params[:id])
+      @user = @blog.user
+      if @user == current_user
+        render 'show'
+      else
+        flash[:notice] = "This blog is not available."
+        redirect_to blogs_path
+      end
   end
  
   def new

@@ -18,7 +18,7 @@
 						<%= image_tag "face11.jpg", class: "w-32px h-32px rounded-pill", alt: "face11.jpg" %>
 						<span class="status-indicator bg-success"></span>
 					</div>
-					<span class="d-none d-lg-inline-block mx-lg-2">Victoria</span>
+					<span class="d-none d-lg-inline-block mx-lg-2"><%= current_user.first_name %><%= " "%><%= current_user.last_name %></span>
 				</a>
 				<div class="dropdown-menu dropdown-menu-end">
 					<a href="#" class="dropdown-item">

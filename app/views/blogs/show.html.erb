@@ -1,9 +1,15 @@
 <body>
-<strong class="fs-5">Blog name:</strong>
+<strong class="fs-5 me-2">Blog name:</strong>
 <%= @blog.blog_name %></br>
 
-<strong class="fs-5">Description:</strong>
+<strong class="fs-5 me-2">Description:</strong>
 <%= @blog.description %></br>
+
+<strong class="fs-5 me-2">Created at:</strong>
+<%= @blog.created_at %></br>
+
+<strong class="fs-5 me-2">Updated at:</strong>
+<%= @blog.created_at %></br>
 
 <%= link_to 'Edit', edit_blog_path(@blog), class:"btn btn-warning" %>
 <%= link_to 'Back', blogs_path, class:"btn btn-success ms-4" %>
