@@ -20,7 +20,9 @@
      <td><%= blog.blog_name %></td>
      <td><%= blog.description %></td>
      <td><%= blog.user.email %></td>
-     <td><%= blog.created_at %></td>
+     <td>
+      <%= convert_created_date(blog) %>
+     </td>
      <td class="text-center">
         <div class="d-inline-flex">
           <div class="dropdown">

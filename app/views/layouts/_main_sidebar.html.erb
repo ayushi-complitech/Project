@@ -34,16 +34,12 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a href="#" class="nav-link">
-						<i class="ph-layout"></i>
-						<span>Blogs</span>
-					</a>
+				  <%= link_to '<i class="ph-layout"></i> Blogs'.html_safe, blogs_path, class:"nav-link" %>
 				</li>
 				<li class="nav-item">
-					<a href="#" class="nav-link">
-						<i class="ph-layout"></i>
-						<span>User</span>
-					</a>
+					<% if current_user.role.role_name == "admin" %>
+					  <%= link_to '<i class="ph-layout"></i> Users'.html_safe, users_index_path, class:"nav-link" %>
+					<% end %>
 				</li>
 				
 				<!-- /main -->

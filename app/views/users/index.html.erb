@@ -1,0 +1,23 @@
+  <div class="card-header">
+    <h5 class="mb-0">Users</h5>
+  </div>
+<table class="table">
+ <thead>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>User email</th>
+  </tr>
+ </thead>
+
+ <tbody>
+  <% @users.each do |user| %>
+   <tr>
+     <td><%= user.first_name %></td>
+     <td><%= user.last_name %></td>
+     <td><%= user.email %></td>
+   </tr>
+  <% end %>
+ </tbody>
+</table>
+<%= link_to 'Back', blogs_path, class:"btn btn-success" %>

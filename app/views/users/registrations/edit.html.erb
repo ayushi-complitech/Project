@@ -27,6 +27,11 @@
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
+ 
+ <div class="field">
+    <%= f.label :timezone %>
+    <%= f.select :timezone, ActiveSupport::TimeZone.all.select {|a| ['Kolkata', 'UTC'].include?(a.name)} %>
+  </div>
 
   <div class="field form-outline form-white mb-2 text-start">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />

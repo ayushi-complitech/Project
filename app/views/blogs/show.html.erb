@@ -6,10 +6,10 @@
 <%= @blog.description %></br>
 
 <strong class="fs-5 me-2">Created at:</strong>
-<%= @blog.created_at %></br>
+<%= convert_created_date(@blog) %></br>
 
 <strong class="fs-5 me-2">Updated at:</strong>
-<%= @blog.created_at %></br>
+<%= convert_updated_date(@blog) %></br>
 
 <%= link_to 'Edit', edit_blog_path(@blog), class:"btn btn-warning" %>
 <%= link_to 'Back', blogs_path, class:"btn btn-success ms-4" %>
