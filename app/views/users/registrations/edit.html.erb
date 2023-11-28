@@ -6,17 +6,17 @@
         <h5 class="mb-0">Edit User</h5>
       </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), class:"form-validate-jquery", html: { method: :put }) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
 
   <div class="field form-outline form-white mb-2 text-start">
     <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, class:"form-control mt-1 p-2", autofocus: true %>
+    <%= f.text_field :first_name, required: true, class:"form-control mt-1 p-2", autofocus: true %>
   </div>
 
   <div class="field form-outline form-white mb-2 text-start">
     <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, class:"form-control mt-1 p-2", autofocus: true %>
+    <%= f.text_field :last_name, required: true, class:"form-control mt-1 p-2", autofocus: true %>
   </div>
 
   <div class="field form-outline form-white mb-2 text-start">
@@ -28,7 +28,7 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
  
- <div class="field">
+ <div class="field my-3">
     <%= f.label :timezone %>
     <%= f.select :timezone, ActiveSupport::TimeZone.all.select {|a| ['Kolkata', 'UTC'].include?(a.name)} %>
   </div>

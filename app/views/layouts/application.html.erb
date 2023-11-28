@@ -30,9 +30,22 @@
           <!-- /page header -->
           <!-- Content area -->
           <div class="content">
-            <%= notice %>
-            <%= alert %>
-            <%= yield %>
+          <% flash.each do |type, message| %>
+            <div class="alert text-white alert-icon-start  <% if type == 'notice' %>bg-success<% else %>bg-danger<% end %> alert-dismissible fade show border-0" role="alert">
+            <% if type == 'notice' %>
+            <span class="alert-icon bg-black bg-opacity-20">
+              <i class="ph-check-circle"></i>
+            </span>
+            <% else %>
+             <span class="alert-icon bg-black bg-opacity-20">
+                <i class="ph-x-circle"></i>
+              </span>
+             <% end %>
+            <%= message %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+           </div>
+          <% end %>
+          <%= yield %>
           </div>
           <!-- /content area -->
           <!-- Footer -->

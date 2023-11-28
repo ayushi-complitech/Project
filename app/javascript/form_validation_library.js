@@ -130,7 +130,10 @@ const FormValidation = function() {
                 },
                 switch_group: {
                     minlength: 2
-                }
+                },
+                "blog[blog_name]": {
+                   required: true
+                },
             },
             messages: {
                 custom: {

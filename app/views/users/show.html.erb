@@ -1,0 +1,19 @@
+<body>
+<strong class="fs-5 me-2">First name:</strong>
+<%= @user.first_name %></br>
+
+<strong class="fs-5 me-2">Last name:</strong>
+<%= @user.last_name %></br>
+
+<strong class="fs-5 me-2">Email:</strong>
+<%= @user.email %></br>
+
+<strong class="fs-5 me-2">Created at:</strong>
+<%= convert_created_date(@user) %></br>
+
+<strong class="fs-5 me-2">Updated at:</strong>
+<%= convert_updated_date(@user) %></br>
+
+<%= link_to 'Edit', edit_user_path(@user), class:"btn btn-warning" %>
+<%= link_to 'Back', users_path, class:"btn btn-success ms-4" %>
+</body>

@@ -5,6 +5,14 @@
 <strong class="fs-5 me-2">Description:</strong>
 <%= @blog.description %></br>
 
+<strong class="fs-5 me-2">Content:</strong>
+<%= @blog.content %>
+
+<strong class="fs-5 me-2">Image:</strong>
+<% if @blog.image.attached? %>
+ <image src="<%=(url_for(@blog.image))%>">
+<% end %></br>
+
 <strong class="fs-5 me-2">Created at:</strong>
 <%= convert_created_date(@blog) %></br>
 

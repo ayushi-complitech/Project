@@ -1,0 +1,52 @@
+<%= form_with model: @user, url: create_user_path, local: true do |form| %>
+
+<div>
+<%= form.label :first_name, class:"me-4" %>
+<%= form.text_field :first_name, required: true, placeholder: "Enter your first name", class:"mb-2" %>
+<% @user.errors.full_messages_for(:first_name).each do |message| %>
+      <div><%= message %></div>
+<% end %>
+</div>
+
+<div>
+<%= form.label :last_name, class:"me-4" %>
+<%= form.text_field :last_name, placeholder: "Enter your last name", class:"mb-2" %>
+<% @user.errors.full_messages_for(:last_name).each do |message| %>
+      <div><%= message %></div>
+<% end %>
+</div>
+
+<div>
+<%= form.label :role_name, class:"me-4" %>      
+<%= form.collection_select :role_id, Role.all, :id, :role_name, {:selected => 2}, class:"mb-2" %>
+</div>
+
+<div>
+<%= form.label :email, class:"me-4" %>
+<%= form.email_field :email, placeholder: "Enter your email", class:"mb-2" %>
+<% @user.errors.full_messages_for(:email).each do |message| %>
+      <div><%= message %></div>
+<% end %>
+</div>
+
+<div>
+<%= form.label :password, class:"me-4" %>
+<%= form.password_field :password, placeholder: "Enter your password", class:"mb-2" %>
+<% @user.errors.full_messages_for(:password).each do |message| %>
+      <div><%= message %></div>
+<% end %>
+</div>
+
+<div>
+<%= form.label :password_confirmation, class:"me-4" %>
+<%= form.password_field :password_confirmation, placeholder: "Enter your password again", class:"mb-2" %>
+<% @user.errors.full_messages_for(:password_confirmation).each do |message| %>
+      <div><%= message %></div>
+<% end %>
+</div>
+
+
+<div>
+  <%= form.submit"Create user", class:"btn btn-primary mt-2 mb-2" %>
+</div>
+<% end %>

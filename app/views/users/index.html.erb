@@ -1,12 +1,13 @@
   <div class="card-header">
     <h5 class="mb-0">Users</h5>
   </div>
-<table class="table">
+<table class="table datatable-basic">
  <thead>
   <tr>
     <th>First name</th>
     <th>Last name</th>
     <th>User email</th>
+     <th class="text-center" >Actions</th>
   </tr>
  </thead>
 
@@ -16,8 +17,27 @@
      <td><%= user.first_name %></td>
      <td><%= user.last_name %></td>
      <td><%= user.email %></td>
+     <td class="text-center">
+        <div class="d-inline-flex"> 
+          <div class="dropdown">
+            <a href="#" class="text-body" data-bs-toggle="dropdown">
+              <i class="ph-list"></i>
+            </a>
+
+     <div class="dropdown-menu dropdown-menu-end">
+          <%= link_to 'Show', user_path(user), class:"dropdown-item" %>           
+
+          <%= link_to 'Edit', edit_user_path(user), class:"dropdown-item" %>                
+      
+          <%= link_to 'Destroy', user_path(user), class:"dropdown-item",
+          data: { confirm: "Are you sure?",method: :delete, turbo_confirm: "Are you sure?", turbo_method: :delete }
+           %>                 
+        
+      </div>  
+    </div>
+  </div>
+    </td>
    </tr>
   <% end %>
  </tbody>
 </table>
-<%= link_to 'Back', blogs_path, class:"btn btn-success" %>

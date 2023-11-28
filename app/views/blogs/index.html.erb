@@ -31,17 +31,14 @@
             </a>
 
      <div class="dropdown-menu dropdown-menu-end">
-        <a href="#" class="dropdown-item">
-          <%= link_to 'Show', blog_path(blog), class:"btn btn-dark pe-3" %>           
-        </a>
-        <a href="#" class="dropdown-item">
-          <%= link_to 'Edit', edit_blog_path(blog), class:"btn btn-dark pe-4" %>                
-        </a>
-        <a href="#" class="dropdown-item">
-          <%= button_to 'Destroy', blog_path(blog), class:"btn btn-dark",
-          data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" },
-          method: :delete %>                 
-        </a>
+          <%= link_to 'Show', blog_path(blog), class:"dropdown-item" %>           
+
+          <%= link_to 'Edit', edit_blog_path(blog), class:"dropdown-item" %>                
+      
+          <%= link_to 'Destroy', blog_path(blog), class:"dropdown-item",
+          data: { confirm: "Are you sure?", method: :delete, turbo_confirm: "Are you sure?", turbo_method: :delete }
+           %>                 
+        
       </div>  
     </div>
   </div>

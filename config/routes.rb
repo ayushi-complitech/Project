@@ -6,6 +6,11 @@ Rails.application.routes.draw do
     passwords: 'users/passwords',
     confirmations: 'users/confirmations'
   }
+  
+  devise_scope :user do
+    post '/users/create', to: 'users#create', as: :create_user
+  end
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -17,4 +22,5 @@ Rails.application.routes.draw do
   root "blogs#index"
   resources :roles
   resources :blogs
+  resources :users
 end

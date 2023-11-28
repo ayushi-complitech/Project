@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Blogs</title>
+    <title>BlogDemo</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -14,21 +14,38 @@
 
   <body>
     <!-- Main navbar -->
-    <%= render "layouts/navbar" %>
+    <%= render "layouts/main_navbar" %>
     <!-- /main navbar -->
     <!-- Page content -->
     <div class="page-content">
       <!-- Main sidebar -->
+      <%= render "layouts/main_sidebar" %>
       <!-- /main sidebar -->
       <!-- Main content -->
       <div class="content-wrapper">
         <!-- Inner content -->
         <div class="content-inner">
           <!-- Page header -->
+          <%= render "layouts/user_page_header" %>
           <!-- /page header -->
           <!-- Content area -->
           <div class="content">
-            <%= yield %>
+          <% flash.each do |type, message| %>
+            <div class="alert text-white alert-icon-start  <% if type == 'notice' %>bg-success<% else %>bg-danger<% end %> alert-dismissible fade show border-0" role="alert">
+            <% if type == 'notice' %>
+            <span class="alert-icon bg-black bg-opacity-20">
+              <i class="ph-check-circle"></i>
+            </span>
+            <% else %>
+             <span class="alert-icon bg-black bg-opacity-20">
+                <i class="ph-x-circle"></i>
+              </span>
+             <% end %>
+            <%= message %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+           </div>
+          <% end %>
+          <%= yield %>
           </div>
           <!-- /content area -->
           <!-- Footer -->
