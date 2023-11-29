@@ -28,7 +28,7 @@ class BlogsController < ApplicationController
  
   def create
     @blog = current_user.blogs.build(blog_params)
-    @blog.image.attach(params[:image])
+    @blog.image.attach(params[:blog][:image])
  
     if @blog.save
       flash[:notice] = "This blog is successfully created."

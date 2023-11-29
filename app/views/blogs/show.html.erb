@@ -10,7 +10,7 @@
 
 <strong class="fs-5 me-2">Image:</strong>
 <% if @blog.image.attached? %>
- <image src="<%=(url_for(@blog.image))%>">
+ <image src="<%=(url_for(@blog.image))%>", width="250", height="150">
 <% end %></br>
 
 <strong class="fs-5 me-2">Created at:</strong>
